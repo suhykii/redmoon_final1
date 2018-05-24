@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'kaminari'
 gem 'devise'
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'

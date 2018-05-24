@@ -14,8 +14,9 @@ class HomeController < ApplicationController
     @post.db_title = params[:title]
     @post.db_content = params[:content]
     @post.image =params[:image]
-    
     @post.save
+    @posts = Post.order.page("created_at DESC")
+    
     
     redirect_to '/gita'
   end

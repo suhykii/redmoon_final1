@@ -18,7 +18,7 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="shortcut icon" href="images/myicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
@@ -33,10 +33,13 @@
 				<div class="row">
 					<div class="col-sm-6">
 						<div class="contactinfo">
-							<ul class="nav nav-pills">
-								<li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
-								<li><a href="#"><i class="fa fa-envelope"></i> doo_lee_3@naver.com</a></li>
-							    <% if user_signed_in? %>
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="/main">홈</a></li>
+								<li><a href="#">식음료</a>
+								<li><a href="#">리빙</a>
+								<li><a href="#">패션 & 뷰티</a></li>
+								<li><a href="#">기타</a></li>
+								<% if user_signed_in? %>
 							    <li><a href="/users/sign_out">[로그아웃]</a><li>
 							    <% else %>
 								<li><a href="/users/sign_in">[로그인]</a></li>
@@ -44,17 +47,17 @@
 							</ul>
 						</div>
 					</div>
-					<div class="col-sm-6">
-						<div class="social-icons pull-right">
-							<ul class="nav navbar-nav">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
+					<!--<div class="col-sm-6">-->
+					<!--	<div class="social-icons pull-right">-->
+					<!--		<ul class="nav navbar-nav">-->
+					<!--			<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
+					<!--			<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+					<!--		</ul>-->
+					<!--	</div>-->
+					<!--</div>-->
 				</div>
 			</div>
 		</div><!--/header_top-->
@@ -87,7 +90,7 @@
 						</div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-								<li><a href="/main" class="active">홈</a></li>
+								<li><a href="/main" >홈</a></li>
 								<li class="dropdown"><a href="#">식음료<!--<i class="fa fa-angle-down"></i> --></a>
           <!--                          <ul role="menu" class="sub-menu">-->
           <!--                              <li><a href="shop.html">Products</a></li>-->
@@ -104,7 +107,7 @@
           <!--                          </ul>-->
                                 <!--</li> -->
 								<li><a href="#">패션 & 뷰티</a></li>
-								<li><a href="/gita">기타</a></li>
+								<li><a href="/gita" class="active">기타</a></li>
 								
 							</ul>
 						</div>
@@ -116,25 +119,26 @@
 				</div>
 			</div>
 		</div><!--/header-bottom-->
-	</header>>
+	</header>
 				
  
-
-<div class="item_box">
+<div class="container">
+<div class="productinfo2 text-center">
 <% @posts.each do |x| %>
 <img src="<%= x.image.url %>"><br>
-제목 : <%= x.db_title %><br>
-내용 : <%= x.db_content %>
+<h3> 제목 : <%= x.db_title %><br> </h3>
+내용 : <%= x.db_content %><br><br>
 <%end%>
 </div>
-				
+</div>
+			
 
 		
 		<div class="footer-bottom">
 			<div class="container">
 				
 			<!--번호/페이스북아이콘 소스 아래부터-->
-					<div class="footer_add"><!--footer_add-->
+		<div class="footer_add"><!--footer_add-->
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-6">
@@ -145,17 +149,6 @@
 							</ul>
 						</div>
 					</div>
-					<!--<div class="col-sm-6">-->
-					<!--	<div class="social-icons pull-right">-->
-					<!--		<ul class="nav navbar-nav">-->
-					<!--			<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
-					<!--			<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
-					<!--			<li><a href="#"><i class="fa fa-linkedin"></i></a></li>-->
-					<!--			<li><a href="#"><i class="fa fa-dribbble"></i></a></li>-->
-					<!--			<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
-					<!--		</ul>-->
-					<!--	</div>-->
-					<!--</div>-->
 				</div>
 			</div>
 		</div><!--/header_top-->
@@ -163,7 +156,7 @@
 				
 				<div class="row">
 					<p class="pull-left">Copyright © 2018 멋쟁이사자처럼6기 All rights reserved.</p>
-					<p class="pull-right">Designed by <span>멋쟁이사자처럼건국대</a></span></p>
+					<p class="pull-right">Designed by <span>멋쟁이사자처럼건국대<img src="images/likelionkku.png"></a></span></p>
 				</div>
 			</div>
 		</div>
